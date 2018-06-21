@@ -1,0 +1,72 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+             xmlns:tools="http://schemas.android.com/tools"
+             android:layout_width="match_parent"
+             android:layout_height="match_parent"
+             tools:context="ru.production.ssobolevsky.layouttest.FragmentTwo">
+
+    <Button
+        android:id="@+id/b_two_one"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"/>
+
+    <Button
+        android:id="@+id/b_two_two"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentRight="true"/>
+
+    <Button
+        android:id="@+id/b_two_three"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"/>
+
+    <Button
+        android:id="@+id/b_two_four"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true"/>
+
+    <Button
+        android:id="@+id/b_two_five"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"/>
+
+    <Button
+        android:id="@+id/b_two_six"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignStart="@+id/b_two_five"
+        android:layout_below="@+id/b_two_five"/>
+
+    <Button
+        android:id="@+id/b_two_seven"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/b_two_five"
+        android:layout_alignBottom="@+id/b_two_five"
+        android:layout_toStartOf="@+id/b_two_five"/>
+
+    <Button
+        android:id="@+id/b_two_eight"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/b_two_five"
+        android:layout_alignStart="@+id/b_two_five"/>
+
+    <Button
+        android:id="@+id/b_two_nine"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/b_two_five"
+        android:layout_alignBottom="@+id/b_two_five"
+        android:layout_toEndOf="@+id/b_two_five"/>
+
+
+</RelativeLayout>

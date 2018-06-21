@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">LayoutTest</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="one">One</string>
+    <string name="two">two</string>
+    <string name="three">three</string>
+    <string name="undefined">Undefined</string>
+</resources>
