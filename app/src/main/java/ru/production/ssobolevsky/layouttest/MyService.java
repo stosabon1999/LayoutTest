@@ -47,8 +47,7 @@ public class MyService extends Service {
         new Thread(new Runnable() {
             @Override
             public void run() {
-                int i = 0;
-                while (i < 10) {
+                while (true) {
                 Message msg = Message.obtain(null, MSG_SEND_DATA);
                 Bundle bundle = new Bundle();
                 bundle.putIntArray(COLORS_THREE, getRandomColors());
@@ -61,9 +60,8 @@ public class MyService extends Service {
                         e.printStackTrace();
                     }
                 }
-                i++;
                     try {
-                        Thread.sleep(3000);
+                        Thread.sleep(1000);
                     } catch (InterruptedException e) {
                         e.printStackTrace();
                     }

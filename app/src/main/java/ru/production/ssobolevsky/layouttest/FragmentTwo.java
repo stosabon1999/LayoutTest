@@ -4,8 +4,10 @@ package ru.production.ssobolevsky.layouttest;
 import android.content.Context;
 import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
+import android.os.Handler;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -71,6 +73,7 @@ public class FragmentTwo extends Fragment {
         mButtonSeven = view.findViewById(R.id.b_two_seven);
         mButtonEight = view.findViewById(R.id.b_two_eight);
         mButtonNine = view.findViewById(R.id.b_two_nine);
+        sendText();
     }
 
     public void setTextAndColors(int[] colors, String[] texts) {
@@ -92,10 +95,21 @@ public class FragmentTwo extends Fragment {
         mButtonEight.setText(texts[7]);
         mButtonNine.setBackgroundColor(colors[8]);
         mButtonNine.setText(texts[8]);
-        sendText();
     }
 
     private void sendText() {
-        mViewCallBack.onFragmentData(mButtonFive.getText().toString());
+        new Thread(new Runnable() {
+            @Override
+            public void run() {
+                while (true) {
+                    mViewCallBack.onFragmentData(mButtonFive.getText().toString());
+                    try {
+                        Thread.sleep(3000);
+                    } catch (InterruptedException e) {
+                        e.printStackTrace();
+                    }
+                }
+            }
+        }).start();
     }
 }

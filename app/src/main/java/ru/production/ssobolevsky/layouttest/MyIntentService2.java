@@ -22,8 +22,7 @@ public class MyIntentService2 extends IntentService {
 
     @Override
     protected void onHandleIntent(@Nullable Intent intent) {
-        int i = 0;
-        while (i < 10) {
+        while (true) {
             int j = 0;
             String[] strings = new String[3];
             while (j < 3) {
@@ -33,9 +32,8 @@ public class MyIntentService2 extends IntentService {
             Intent broadcastIntent = new Intent(MainActivity.FILTER_STRINGS);
             broadcastIntent.putExtra(STRINGS, strings);
             sendBroadcast(broadcastIntent);
-            i++;
             try {
-                TimeUnit.SECONDS.sleep(3);
+                TimeUnit.SECONDS.sleep(1);
             } catch (InterruptedException e) {
                 e.printStackTrace();
             }

@@ -21,8 +21,7 @@ public class MyIntentService extends IntentService {
 
     @Override
     protected void onHandleIntent(Intent intent) {
-        int i = 0;
-        while (i < 10) {
+        while (true) {
             int j = 0;
             int[] colors = new int[3];
             while (j < 3) {
@@ -32,9 +31,8 @@ public class MyIntentService extends IntentService {
             Intent broadcastIntent = new Intent(MainActivity.FILTER_COLORS);
             broadcastIntent.putExtra(COLORS, colors);
             sendBroadcast(broadcastIntent);
-            i++;
             try {
-                TimeUnit.SECONDS.sleep(3);
+                TimeUnit.SECONDS.sleep(1);
             } catch (InterruptedException e) {
                 e.printStackTrace();
             }

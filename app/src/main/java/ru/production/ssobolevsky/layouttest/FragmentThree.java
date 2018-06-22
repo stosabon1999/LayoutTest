@@ -2,6 +2,7 @@ package ru.production.ssobolevsky.layouttest;
 
 
 import android.os.Bundle;
+import android.os.Handler;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.util.Log;
@@ -21,6 +22,8 @@ public class FragmentThree extends Fragment {
     private Button mButtonTwo;
 
     private Button mButtonThree;
+
+    private Handler mHandler = new Handler();
 
     public FragmentThree() {
         // Required empty public constructor
@@ -53,8 +56,13 @@ public class FragmentThree extends Fragment {
         mButtonThree.setText(texts[2]);
     }
 
-    public void setButtonText(String text) {
+    public void setButtonText(final String text) {
+        mHandler.post(new Runnable() {
+            @Override
+            public void run() {
 
-        mButtonTwo.setText(text);
+                    mButtonTwo.setText(text);
+            }
+        });
     }
 }
